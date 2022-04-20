@@ -1,0 +1,57 @@
+$card-font-size: 12px;
+$card-line-height: 16px;
+
+.b-kanban-card-wrapper {
+  position: relative;
+  padding: 4px 8px;
+  .b-kanban-card {
+    position: relative;
+    border-radius: 3px;
+    border: 1px solid #bababa;
+    padding: 6px;
+    cursor: move;
+    &-controls {
+      position: absolute;
+      top: 4px;
+      right: 4px;
+      button {
+        width: 24px;
+        height: 24px;
+        padding: 0;
+        border: 0;
+        background-color: transparent;
+        cursor: pointer;
+        img {
+          width: 14px;
+          height: 14px;
+          margin-top: 2px;
+        }
+      }
+    }
+    &-name {
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    &-decsr {
+      margin-bottom: 6px;
+      font-size: $card-font-size;
+      line-height: $card-line-height;
+    }
+    &-due {
+      font-size: $card-font-size;
+      line-height: $card-line-height;
+    }
+  }
+  .b-kanban-insert {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: brown;
+    &.before{
+      bottom: auto;
+      top: -2px;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+@import-normalize;
+@import 'fonts';
+@import 'variables';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  color: $text-color-base;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  font-family: $font-family-base;
+  background-color: #f6fafb;
+}

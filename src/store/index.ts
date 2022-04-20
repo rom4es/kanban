@@ -1,9 +1,9 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+import kanbanReducer from '../store/slices/kanban/';
 
 export const store = configureStore({
   reducer: {
-    counter: counterReducer,
+    kanban: kanbanReducer,
   },
 });
 
