@@ -1,13 +1,13 @@
 import dayjs from 'dayjs';
-import React, { useRef, useState } from 'react';
-import { ICard } from '../../../store/slices/kanban/types';
+import React, { useEffect, useRef, useState } from 'react';
+import { ICard, ModalType } from '../../../store/slices/kanban/types';
 import './styles.scss';
 import editIcon from '../../../assets/images/icons/edit.svg';
 import deleteIcon from '../../../assets/images/icons/close.svg';
 import { DropTargetMonitor, useDrag, useDrop, XYCoord } from 'react-dnd';
 import { useAppDispatch } from '../../../hooks';
 import { ICardDnd } from '../types';
-import { moveCard } from '../../../store/slices/kanban';
+import { moveCard, showModal } from '../../../store/slices/kanban';
 
 interface KanbanCardProps {
   card: ICard;
@@ -24,6 +24,7 @@ const KanbanCard: React.FC<KanbanCardProps> = ({ card, statusId }) => {
   const wrapperCardRef = useRef<HTMLDivElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
   const [hoverTop, setHoverTop] = useState(false);
+
   const [{ isDragging }, drag] = useDrag(() => ({
     type: 'card',
     item: { cardId: card.id },
@@ -62,9 +63,9 @@ const KanbanCard: React.FC<KanbanCardProps> = ({ card, statusId }) => {
     if (!wrapperCardRef.current) {
       return null;
     }
-    const dragIndex = item.cardId;
-    const hoverIndex = card.id;
-    if (dragIndex === hoverIndex) {
+    const dragId = item.cardId;
+    const hoverId = card.id;
+    if (dragId === hoverId) {
       return null;
     }
     const hoverBoundingRect = wrapperCardRef.current?.getBoundingClientRect();
@@ -79,18 +80,30 @@ const KanbanCard: React.FC<KanbanCardProps> = ({ card, statusId }) => {
   drop(wrapperCardRef);
 
   return (
-    <div className="b-kanban-card-wrapper" ref={wrapperCardRef} style={{ opacity: isDragging ? 0.5 : 1 }}>
+    <div
+      className="b-kanban-card-wrapper"
+      ref={wrapperCardRef}
+      style={{ opacity: isDragging ? 0.5 : 1 }}
+    >
       <div className="b-kanban-card" ref={cardRef}>
         <div className="b-kanban-card-controls">
-          <button className="edit" onClick={() => {}}>
+          <button
+            className="edit"
+            onClick={() =>
+              dispatch(showModal({ type: ModalType.Creation, card: card, initialStatus: statusId }))
+            }
+          >
             <img src={editIcon} alt="" />
           </button>
-          <button className="delete" onClick={() => {}}>
+          <button
+            className="delete"
+            onClick={() => dispatch(showModal({ type: ModalType.Remove, card: card }))}
+          >
             <img src={deleteIcon} alt="" />
           </button>
         </div>
         <div className="b-kanban-card-name">{card.name}</div>
-        <div className="b-kanban-card-decsr">{card.decsription}</div>
+        <div className="b-kanban-card-decsr">{card.description}</div>
         <div className="b-kanban-card-due">
           {card.due ? dayjs(card.due).format('DD.MM.YYYY') : ''}
         </div>

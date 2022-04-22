@@ -1,5 +1,17 @@
+export enum ModalType {
+  Remove = 'remove',
+  Creation = 'creation',
+}
+
 export interface KanbanState {
   statuses: IStatus[];
+  activeModal: {
+    type: ModalType | null;
+    props: {
+      card: ICard | null;
+      initialStatus: number | null;
+    }
+  };
 }
 
 export interface IStatus {
@@ -9,9 +21,12 @@ export interface IStatus {
   items: ICard[];
 }
 
-export interface ICard {
-  id: number;
+export interface ICardData {
   name: string;
-  decsription?: string;
-  due?: string | null;
+  description: string;
+  due: string | null;
+}
+
+export interface ICard extends ICardData{
+  id: string;
 }

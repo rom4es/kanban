@@ -1,8 +1,8 @@
 import React from 'react';
 import { useDrop } from 'react-dnd';
 import { useAppDispatch } from '../../../hooks';
-import { moveCard } from '../../../store/slices/kanban';
-import { IStatus } from '../../../store/slices/kanban/types';
+import { moveCard, showModal } from '../../../store/slices/kanban';
+import { IStatus, ModalType } from '../../../store/slices/kanban/types';
 import KanbanCard from '../card';
 import { ICardDnd } from '../types';
 import './styles.scss';
@@ -34,7 +34,11 @@ const KanbanList: React.FC<KanbanPropsProps> = ({ status }) => {
       <div className="b-kanban-list-header" style={{ borderColor: status.color }}>
         {status.name} ({status.items.length})
       </div>
-      <div className="b-kanban-list-add" style={{ backgroundColor: status.color}}>
+      <div
+        className="b-kanban-list-add"
+        style={{ backgroundColor: status.color }}
+        onClick={() => dispatch(showModal({ type: ModalType.Creation, initialStatus: status.id }))}
+      >
         +
       </div>
       <div className="b-kanban-list-items">

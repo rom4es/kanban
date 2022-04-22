@@ -1,21 +1,22 @@
 import { IStatus } from "../types";
+import { v4 as uuidv4 } from 'uuid';
 
 export const data: IStatus[] = [
   {
     id: 1,
     name: 'Новые',
-    color: '#8c4566',
+    color: '#fec859',
     items: [
       {
-        id: 1,
+        id: uuidv4(),
         name: 'Задача 1',
-        decsription: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s',
+        description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s',
         due: null,
       },
       {
-        id: 2,
+        id: uuidv4(),
         name: 'Задача 2',
-        decsription: 'Описание',
+        description: 'Описание',
         due: new Date(2022, 2, 5).toISOString(),
       },
     ]
@@ -23,7 +24,7 @@ export const data: IStatus[] = [
   {
     id: 2,
     name: 'На согласовании',
-    color: '#ffa500',
+    color: '#491d88',
     items: [
 
     ]
@@ -31,18 +32,18 @@ export const data: IStatus[] = [
   {
     id: 3,
     name: 'В работе',
-    color: '#32127a',
+    color: '#fa448c',
     items: [
       {
-        id: 3,
+        id: uuidv4(),
         name: 'Задача 3',
-        decsription: 'Описание',
+        description: 'Описание',
         due: null,
       },
       {
-        id: 4,
+        id: uuidv4(),
         name: 'Задача 4',
-        decsription: 'Описание',
+        description: 'Описание',
         due: new Date(2022, 4, 1).toISOString(),
       },
     ]
@@ -50,12 +51,12 @@ export const data: IStatus[] = [
   {
     id: 4,
     name: 'Готово, ждёт отправки',
-    color: '#efcdb8',
+    color: '#331a38',
     items: [
       {
-        id: 5,
+        id: uuidv4(),
         name: 'Задача 5',
-        decsription: 'Описание',
+        description: 'Описание',
         due: null,
       },
     ]
@@ -63,7 +64,7 @@ export const data: IStatus[] = [
   {
     id: 5,
     name: 'Отправлено',
-    color: '#ea8df7',
+    color: '#E77D67',
     items: [
 
     ]
@@ -71,7 +72,7 @@ export const data: IStatus[] = [
   {
     id: 6,
     name: 'Выполнены',
-    color: '#00836e',
+    color: '#43b5a0',
     items: [
 
     ]

@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { useAppSelector } from '../../hooks';
+import Modal from '../modal';
 import KanbanList from './list';
 import './styles.scss';
 

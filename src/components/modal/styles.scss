@@ -1,0 +1,129 @@
+.b-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  &.show {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.2s ease-out, visibility 0.2s ease-out;
+    .b-modal {
+      transform: translateY(0);
+      transition: transform 0.2s ease-out;
+    }
+  }
+  .b-modal {
+    position: relative;
+    width: calc(100% - 32px);
+    max-width: 600px;
+    background-color: #fff;
+    border-radius: 5px;
+    transform: translateY(-20px);
+    &-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 26px;
+      height: 26px;
+      cursor: pointer;
+      img {
+        width: 16px;
+        height: 16px;
+      }
+    }
+    &-title {
+      padding: 20px;
+      font-size: 20px;
+      line-height: 26px;
+      font-weight: 700;
+      border-bottom: 1px solid #bababa;
+    }
+    &-content {
+      padding: 20px;
+    }
+  }
+}
+
+// .b-overlay {
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   bottom: 0;
+//   background-color: rgba(0, 0, 0, 0.5);
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   .b-modal {
+//     position: relative;
+//     width: calc(100% - 32px);
+//     max-width: 600px;
+//     background-color: #fff;
+//     border-radius: 5px;
+//     &-close {
+//       position: absolute;
+//       top: 20px;
+//       right: 20px;
+//       width: 26px;
+//       height: 26px;
+//       cursor: pointer;
+//       img {
+//         width: 16px;
+//         height: 16px;
+//       }
+//     }
+//     &-title {
+//       padding: 20px;
+//       font-size: 20px;
+//       line-height: 26px;
+//       font-weight: 700;
+//       border-bottom: 1px solid #bababa;
+//     }
+//     &-content{
+//       padding: 20px;
+//     }
+//   }
+// }
+
+// // Animation CSSTransition
+
+// .modal-transition-enter {
+//   opacity: 0;
+//   visibility: hidden;
+//   .b-modal {
+//     transform: translateY(-20px);
+//   }
+// }
+// .modal-transition-enter-active {
+//   opacity: 1;
+//   visibility: visible;
+//   transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
+//   .b-modal {
+//     transform: translateY(0);
+//     transition: transform 0.3s ease-out;
+//   }
+// }
+// .modal-transition-exit {
+//   opacity: 1;
+//   visibility: visible;
+//   .b-modal {
+//     transform: translateY(0);
+//   }
+// }
+// .modal-transition-exit-active {
+//   opacity: 0;
+//   visibility: hidden;
+//   transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
+//   .b-modal {
+//     transform: translateY(-20px);
+//     transition: transform 0.3s ease-out;
+//   }
+// }

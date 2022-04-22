@@ -1,0 +1,13 @@
+.b-card-form {
+  .b-form-row {
+    display: flex;
+    justify-content: space-between;
+  }
+  .b-input {
+    width: 100%;
+  }
+  .b-datepicker,
+  .b-select {
+    width: calc(50% - 8px);
+  }
+}
