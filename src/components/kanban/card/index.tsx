@@ -103,7 +103,7 @@ const KanbanCard: React.FC<KanbanCardProps> = ({ card, statusId }) => {
           </button>
         </div>
         <div className="b-kanban-card-name">{card.name}</div>
-        <div className="b-kanban-card-decsr">{card.description}</div>
+        <div className="b-kanban-card-descr">{card.description}</div>
         <div className="b-kanban-card-due">
           {card.due ? dayjs(card.due).format('DD.MM.YYYY') : ''}
         </div>

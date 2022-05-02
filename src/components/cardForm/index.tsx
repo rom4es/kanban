@@ -3,7 +3,7 @@ import { useAppDispatch, useAppSelector } from '../../hooks';
 import './styles.scss';
 import 'react-datepicker/dist/react-datepicker.css';
 import DatePicker from 'react-datepicker';
-import { addCard } from '../../store/slices/kanban';
+import { addCard, editCard } from '../../store/slices/kanban';
 import { ICard } from '../../store/slices/kanban/types';
 import TextareaAutosize from 'react-textarea-autosize';
 
@@ -23,16 +23,29 @@ const CardForm: React.FC<CardFormProps> = ({ onClose, initialStatus = null, card
   const [status, setStatus] = useState<number>(initialStatus ? initialStatus : statuses[0].id);
 
   const onSave = () => {
-    dispatch(
-      addCard({
-        card: {
-          name,
-          description,
-          due: dueDate ? dueDate.toISOString() : null,
-        },
-        statusId: status,
-      })
-    );
+    if (card) {
+      dispatch(
+        editCard({
+          card: {
+            id: card.id,
+            name,
+            description,
+            due: dueDate ? dueDate.toISOString() : null,
+          }
+        })
+      );
+    } else {
+      dispatch(
+        addCard({
+          card: {
+            name,
+            description,
+            due: dueDate ? dueDate.toISOString() : null,
+          },
+          statusId: status,
+        })
+      );
+    }
     onClose();
   };
 
@@ -63,6 +76,7 @@ const CardForm: React.FC<CardFormProps> = ({ onClose, initialStatus = null, card
             onChange={(date: Date) => setDueDate(date)}
             dateFormat="dd.MM.yyyy"
             calendarStartDay={1}
+            minDate={new Date()}
           />
         </div>
         <div className="b-select">

@@ -1,0 +1,25 @@
+.b-filter {
+  margin-bottom: 10px;
+  .b-filter-item {
+    position: relative;
+    display: inline-block;
+    margin-right: 10px;
+    input {
+      position: absolute;
+      opacity: 0;
+      visibility: hidden;
+      &:checked + label{
+        background-color: #333;
+        color: #FFF;
+        border-color: 1px solid #333;
+      }
+    }
+    label {
+      display: inline-block;
+      padding: 6px 16px;
+      border: 1px solid #ccc;
+      border-radius: 100px;
+      cursor: pointer;
+    }
+  }
+}

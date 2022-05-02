@@ -1,10 +1,11 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { data } from './mocks';
-import { ICard, ICardData, IStatus, KanbanState, ModalType } from './types';
+import { DueFilterType, ICard, ICardData, IStatus, KanbanState, ModalType } from './types';
 import { v4 as uuidv4 } from 'uuid';
 
 const initialState: KanbanState = {
   statuses: data,
+  dueFilter: DueFilterType.All,
   activeModal: {
     type: null,
     props: {
@@ -98,10 +99,23 @@ export const counterSlice = createSlice({
         status.items.push(card);
       }
     },
+    editCard(state, action: PayloadAction<{ card: ICard }>) {
+      state.statuses.forEach((status, statusIndex) =>
+        status.items.forEach((item, itemIndex) => {
+          if (item.id === action.payload.card.id) {
+            state.statuses[statusIndex].items[itemIndex] = action.payload.card;
+          }
+        })
+      );
+    },
+    changeFilter(state, action: PayloadAction<{ newValue: DueFilterType }>) {
+      state.dueFilter = action.payload.newValue;
+    },
   },
   extraReducers: (builder) => {},
 });
 
-export const { moveCard, showModal, closeModal, removeCard, addCard } = counterSlice.actions;
+export const { moveCard, showModal, closeModal, removeCard, addCard, editCard, changeFilter } =
+  counterSlice.actions;
 
 export default counterSlice.reducer;

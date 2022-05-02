@@ -28,10 +28,12 @@ $card-line-height: 16px;
       font-weight: 700;
       margin-bottom: 6px;
     }
-    &-decsr {
+    &-descr {
       margin-bottom: 6px;
       font-size: $card-font-size;
       line-height: $card-line-height;
+      white-space: pre-wrap;
+      word-wrap: break-word;
     }
     &-due {
       font-size: $card-font-size;
@@ -47,7 +49,7 @@ $card-line-height: 16px;
     border-radius: 3px;
     height: 4px;
     background-color: #bababa;
-    &.before{
+    &.before {
       bottom: auto;
       top: -2px;
     }
@@ -56,13 +58,13 @@ $card-line-height: 16px;
 
 // Modals
 
-.b-modal-remove{
-  p{
+.b-modal-remove {
+  p {
     font-size: 16px;
     line-height: 24px;
     margin-bottom: 10px;
   }
-  &-controls .b-btn{
+  &-controls .b-btn {
     margin-right: 10px;
   }
 }

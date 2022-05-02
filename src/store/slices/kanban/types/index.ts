@@ -3,8 +3,15 @@ export enum ModalType {
   Creation = 'creation',
 }
 
+export enum DueFilterType {
+  All = 'all',
+  Overdue = 'overdue',
+  Today = 'today'
+}
+
 export interface KanbanState {
   statuses: IStatus[];
+  dueFilter: DueFilterType;
   activeModal: {
     type: ModalType | null;
     props: {

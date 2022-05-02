@@ -1,8 +1,12 @@
+.b-page {
+  width: 100%;
+  max-width: 1400px;
+  margin: 30px auto 0 auto;
+}
+
 .b-kanban {
   display: flex;
   justify-content: space-between;
   width: 100%;
   height: calc(100vh - 40px);
-  max-width: 1400px;
-  margin: 30px auto 0 auto;
 }
