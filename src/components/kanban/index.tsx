@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { useAppSelector } from '../../hooks';
+import { IStatus } from '../../store/slices/kanban/types';
 import DueFilter from '../dueFilter';
 import Modal from '../modal';
 import KanbanList from './list';
@@ -17,7 +18,7 @@ const Kanban: React.FC<KanbanProps> = () => {
       <DueFilter></DueFilter>
       <DndProvider backend={HTML5Backend}>
         <div className="b-kanban">
-          {statuses.map((item) => (
+          {statuses.map((item: IStatus) => (
             <KanbanList status={item} key={item.id}></KanbanList>
           ))}
         </div>

@@ -4,7 +4,7 @@ import './styles.scss';
 import 'react-datepicker/dist/react-datepicker.css';
 import DatePicker from 'react-datepicker';
 import { addCard, editCard } from '../../store/slices/kanban';
-import { ICard } from '../../store/slices/kanban/types';
+import { ICard, IStatus } from '../../store/slices/kanban/types';
 import TextareaAutosize from 'react-textarea-autosize';
 import { useForm, SubmitHandler } from 'react-hook-form';
 
@@ -98,7 +98,7 @@ const CardForm: React.FC<CardFormProps> = ({ onClose, initialStatus = null, card
               setStatus(Number(e.target.value))
             }
           >
-            {statuses.map((item) => (
+            {statuses.map((item: IStatus) => (
               <option key={item.id} value={item.id}>
                 {item.name}
               </option>
