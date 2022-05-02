@@ -6,6 +6,7 @@ import DatePicker from 'react-datepicker';
 import { addCard, editCard } from '../../store/slices/kanban';
 import { ICard } from '../../store/slices/kanban/types';
 import TextareaAutosize from 'react-textarea-autosize';
+import { useForm, SubmitHandler } from 'react-hook-form';
 
 interface CardFormProps {
   onClose: () => void;
@@ -16,13 +17,14 @@ interface CardFormProps {
 const CardForm: React.FC<CardFormProps> = ({ onClose, initialStatus = null, card = null }) => {
   const { statuses } = useAppSelector((state) => state.kanban);
   const dispatch = useAppDispatch();
+  const { register, handleSubmit, formState: { errors } } = useForm();
 
   const [name, setName] = useState(card ? card.name : '');
   const [description, setDescription] = useState(card ? card.description : '');
   const [dueDate, setDueDate] = useState<Date | null>(card && card.due ? new Date(card.due) : null);
   const [status, setStatus] = useState<number>(initialStatus ? initialStatus : statuses[0].id);
 
-  const onSave = () => {
+  const onSubmit = () => {
     if (card) {
       dispatch(
         editCard({
@@ -31,7 +33,8 @@ const CardForm: React.FC<CardFormProps> = ({ onClose, initialStatus = null, card
             name,
             description,
             due: dueDate ? dueDate.toISOString() : null,
-          }
+          },
+          statusId: status,
         })
       );
     } else {
@@ -50,11 +53,19 @@ const CardForm: React.FC<CardFormProps> = ({ onClose, initialStatus = null, card
   };
 
   return (
-    <div className="b-card-form">
+    <form className="b-card-form" onSubmit={handleSubmit(onSubmit)}>
       <div className="b-form-row">
         <div className="b-input">
-          <label>Имя</label>
-          <input type="text" name="name" value={name} onChange={(e) => setName(e.target.value)} />
+          <label>Название</label>
+          <input
+            {...register('name', { required: true })}
+            className={errors.name ? 'error' : ''}
+            type="text"
+            name="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+          {errors.exampleRequired && <span>This field is required</span>}
         </div>
       </div>
       <div className="b-form-row">
@@ -96,14 +107,14 @@ const CardForm: React.FC<CardFormProps> = ({ onClose, initialStatus = null, card
         </div>
       </div>
       <div className="b-form-controls">
-        <button className="b-btn" onClick={onSave}>
+        <button className="b-btn" type="submit">
           Сохранить
         </button>
         <button className="b-btn" onClick={onClose}>
           Отменить
         </button>
       </div>
-    </div>
+    </form>
   );
 };
 

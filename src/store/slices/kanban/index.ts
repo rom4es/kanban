@@ -23,7 +23,7 @@ const getCardStatus = (statuses: IStatus[], cardId: string) => {
   );
 };
 
-export const counterSlice = createSlice({
+export const kanbanSlice = createSlice({
   name: 'kanban',
   initialState,
   reducers: {
@@ -99,11 +99,21 @@ export const counterSlice = createSlice({
         status.items.push(card);
       }
     },
-    editCard(state, action: PayloadAction<{ card: ICard }>) {
+    editCard(state, action: PayloadAction<{ card: ICard; statusId: number }>) {
       state.statuses.forEach((status, statusIndex) =>
         status.items.forEach((item, itemIndex) => {
           if (item.id === action.payload.card.id) {
             state.statuses[statusIndex].items[itemIndex] = action.payload.card;
+            if (action.payload.statusId !== state.statuses[statusIndex].id) {
+              const moveCardAction = {
+                payload: {
+                  cardId: action.payload.card.id,
+                  newStatusId: action.payload.statusId
+                },
+                type: 'kanban/moveCard'
+              }
+              kanbanSlice.caseReducers.moveCard(state, moveCardAction);
+            }
           }
         })
       );
@@ -116,6 +126,6 @@ export const counterSlice = createSlice({
 });
 
 export const { moveCard, showModal, closeModal, removeCard, addCard, editCard, changeFilter } =
-  counterSlice.actions;
+  kanbanSlice.actions;
 
-export default counterSlice.reducer;
+export default kanbanSlice.reducer;

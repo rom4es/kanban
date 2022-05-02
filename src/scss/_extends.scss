@@ -1,0 +1,18 @@
+@import 'variables';
+
+%input-label {
+  display: block;
+  font-size: 10px;
+  line-height: 10px;
+  margin-bottom: 4px;
+}
+
+%input-styles {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  font-family: $font-family-base;
+  border: 1px solid #bababa;
+  border-radius: 3px;
+}

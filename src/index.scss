@@ -1,0 +1,56 @@
+@import-normalize;
+@import 'scss/reset';
+@import 'scss/fonts';
+@import 'scss/variables';
+@import 'scss/extends';
+
+body {
+  overflow-x: hidden;
+  color: $text-color-base;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  font-family: $font-family-base;
+  background-color: #f6fafb;
+}
+
+.b-btn {
+  padding: 10px 16px;
+  min-width: 70px;
+  border-radius: 100px;
+  background-color: $blue-color;
+  font-size: $font-size-base;
+  line-height: $font-size-base;
+  font-weight: 700;
+  color: #fff;
+}
+
+.b-input {
+  margin-bottom: 16px;
+  label {
+    @extend %input-label;
+  }
+  input,
+  textarea {
+    @extend %input-styles;
+  }
+  textarea {
+    resize: none;
+  }
+}
+
+.b-select {
+  margin-bottom: 16px;
+  label {
+    @extend %input-label;
+  }
+  select {
+    @extend %input-styles;
+    padding: 8px;
+  }
+}
+
+input.error,
+textarea.error,
+select.error{
+  border-color: red;
+}

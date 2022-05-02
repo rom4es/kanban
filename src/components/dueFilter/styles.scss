@@ -1,3 +1,5 @@
+@import '../../scss/variables';
+
 .b-filter {
   margin-bottom: 10px;
   .b-filter-item {
@@ -8,16 +10,17 @@
       position: absolute;
       opacity: 0;
       visibility: hidden;
-      &:checked + label{
-        background-color: #333;
-        color: #FFF;
-        border-color: 1px solid #333;
+      &:checked + label {
+        background-color: $blue-color;
+        color: #fff;
       }
     }
     label {
       display: inline-block;
-      padding: 6px 16px;
-      border: 1px solid #ccc;
+      padding: 8px 16px;
+      border: 1px solid $blue-color;
+      font-size: $font-size-base;
+      line-height: $font-size-base;
       border-radius: 100px;
       cursor: pointer;
     }

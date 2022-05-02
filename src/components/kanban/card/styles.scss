@@ -27,6 +27,7 @@ $card-line-height: 16px;
     &-name {
       font-weight: 700;
       margin-bottom: 6px;
+      padding-right: 46px;
     }
     &-descr {
       margin-bottom: 6px;
@@ -53,18 +54,5 @@ $card-line-height: 16px;
       bottom: auto;
       top: -2px;
     }
-  }
-}
-
-// Modals
-
-.b-modal-remove {
-  p {
-    font-size: 16px;
-    line-height: 24px;
-    margin-bottom: 10px;
-  }
-  &-controls .b-btn {
-    margin-right: 10px;
   }
 }
