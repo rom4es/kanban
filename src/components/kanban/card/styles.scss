@@ -7,7 +7,7 @@ $card-line-height: 16px;
   .b-kanban-card {
     position: relative;
     border-radius: 3px;
-    border: 1px solid #bababa;
+    border: 1px solid #AAA;
     padding: 6px;
     cursor: move;
     &-controls {
@@ -26,21 +26,21 @@ $card-line-height: 16px;
     }
     &-name {
       font-weight: 700;
-      margin-bottom: 6px;
       padding-right: 46px;
     }
     &-descr {
-      margin-bottom: 6px;
       font-size: $card-font-size;
       line-height: $card-line-height;
       white-space: pre-wrap;
       word-wrap: break-word;
+      margin-top: 6px;
     }
     &-due {
       display: flex;
       align-items: center;
       font-size: $card-font-size;
       line-height: $card-line-height;
+      margin-top: 6px;
       .overdue-icon{
         display: inline-block;
         width: 16px;
@@ -57,7 +57,7 @@ $card-line-height: 16px;
     margin: 0 8px;
     border-radius: 3px;
     height: 4px;
-    background-color: #bababa;
+    background-color: #AAA;
     &.before {
       bottom: auto;
       top: -2px;

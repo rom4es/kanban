@@ -104,15 +104,19 @@ const KanbanCard: React.FC<KanbanCardProps> = ({ card, statusId }) => {
           </button>
         </div>
         <div className="b-kanban-card-name">{card.name}</div>
-        <div className="b-kanban-card-descr">{card.description}</div>
-        <div className="b-kanban-card-due">
-          {card.due ? dayjs(card.due).format('DD.MM.YYYY') : ''}
-          {
-            dayjs(card.due).unix() < dayjs().startOf('day').unix() ? (
-              <img src={fireIcon} className="overdue-icon" />
-            ) : ''
-          }
-        </div>
+        {card.description ? <div className="b-kanban-card-descr">{card.description}</div> : ''}
+        {card.due ? (
+          <div className="b-kanban-card-due">
+            {card.due ? dayjs(card.due).format('DD.MM.YYYY') : ''}
+            {dayjs(card.due).unix() < dayjs().startOf('day').unix() && statusId !== 5 ? (
+              <img src={fireIcon} alt="" className="overdue-icon" />
+            ) : (
+              ''
+            )}
+          </div>
+        ) : (
+          ''
+        )}
       </div>
       {isOver && !isDragging ? (
         <div className={`b-kanban-insert ${hoverTop ? 'before' : ''}`}></div>

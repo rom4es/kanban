@@ -7,7 +7,10 @@
   border: 2px solid;
   overflow: hidden;
   &-header {
-    padding: 8px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 16px;
+    padding: 10px 8px;
     border-top: 8px solid;
   }
   &-add {

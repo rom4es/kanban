@@ -4,75 +4,61 @@ import { v4 as uuidv4 } from 'uuid';
 export const data: IStatus[] = [
   {
     id: 1,
-    name: 'Новые',
-    color: '#fec859',
+    name: 'Бэклог',
+    color: '#bf3f27',
     items: [
       {
         id: uuidv4(),
-        name: 'Задача 1',
-        description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s',
-        due: null,
+        name: 'Пофиксить баг в фильтре',
+        description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
+        due: new Date(2022, 3, 28).toISOString(),
       },
       {
         id: uuidv4(),
-        name: 'Задача 2',
-        description: 'Описание',
-        due: new Date(2022, 2, 5).toISOString(),
+        name: 'Созвон с заказчиком',
+        description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+        due: new Date().toISOString(),
       },
     ]
   },
   {
     id: 2,
-    name: 'На согласовании',
-    color: '#491d88',
+    name: 'Анализ',
+    color: '#ef7b4f',
     items: [
-
+      {
+        id: uuidv4(),
+        name: 'Форма оплаты',
+        description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+        due: null
+      },
     ]
   },
   {
     id: 3,
     name: 'В работе',
-    color: '#fa448c',
+    color: '#cb9573',
     items: [
       {
         id: uuidv4(),
-        name: 'Задача 3',
-        description: 'Описание',
+        name: 'Выпить кофе',
+        description: '',
         due: null,
-      },
-      {
-        id: uuidv4(),
-        name: 'Задача 4',
-        description: 'Описание',
-        due: new Date(2022, 4, 1).toISOString(),
       },
     ]
   },
   {
     id: 4,
-    name: 'Готово, ждёт отправки',
-    color: '#331a38',
+    name: 'Тестирование',
+    color: '#72a2ac',
     items: [
-      {
-        id: uuidv4(),
-        name: 'Задача 5',
-        description: 'Описание',
-        due: null,
-      },
+      
     ]
   },
   {
     id: 5,
-    name: 'Отправлено',
-    color: '#E77D67',
-    items: [
-
-    ]
-  },
-  {
-    id: 6,
-    name: 'Выполнены',
-    color: '#43b5a0',
+    name: 'Готово',
+    color: '#3d6c6f',
     items: [
 
     ]
