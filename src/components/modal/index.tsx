@@ -1,8 +1,6 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 import './styles.scss';
 import closeIcon from '../../assets/images/icons/close.svg';
-import ReactPortal from '../reactPortal';
-import { CSSTransition } from 'react-transition-group';
 import ModalRemove from './modalRemove';
 import { ModalType } from '../../store/slices/kanban/types';
 import { useAppDispatch, useAppSelector } from '../../hooks';

@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { useAppSelector } from '../../hooks';
 import { IStatus } from '../../store/slices/kanban/types';
 import DueFilter from '../dueFilter';
-import Modal from '../modal';
 import KanbanList from './list';
 import './styles.scss';
 

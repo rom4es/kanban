@@ -1,5 +1,4 @@
 import React from 'react';
-import { useAppDispatch } from '../../../hooks';
 import { ICard } from '../../../store/slices/kanban/types';
 import CardForm from '../../cardForm';
 import './styles.scss';

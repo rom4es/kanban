@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import { changeFilter } from '../../store/slices/kanban';
 import { DueFilterType } from '../../store/slices/kanban/types';

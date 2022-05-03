@@ -60,47 +60,6 @@
   }
 }
 
-// .b-overlay {
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   right: 0;
-//   bottom: 0;
-//   background-color: rgba(0, 0, 0, 0.5);
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   .b-modal {
-//     position: relative;
-//     width: calc(100% - 32px);
-//     max-width: 600px;
-//     background-color: #fff;
-//     border-radius: 5px;
-//     &-close {
-//       position: absolute;
-//       top: 20px;
-//       right: 20px;
-//       width: 26px;
-//       height: 26px;
-//       cursor: pointer;
-//       img {
-//         width: 16px;
-//         height: 16px;
-//       }
-//     }
-//     &-title {
-//       padding: 20px;
-//       font-size: 20px;
-//       line-height: 26px;
-//       font-weight: 700;
-//       border-bottom: 1px solid #bababa;
-//     }
-//     &-content{
-//       padding: 20px;
-//     }
-//   }
-// }
-
 // // Animation CSSTransition
 
 // .modal-transition-enter {

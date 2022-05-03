@@ -1,13 +1,13 @@
-import dayjs from 'dayjs';
-import React, { useMemo } from 'react';
+import React from 'react';
 import { useDrop } from 'react-dnd';
 import { useAppDispatch, useAppSelector } from '../../../hooks';
 import { moveCard, showModal } from '../../../store/slices/kanban';
 import { DueFilterType, IStatus, ModalType } from '../../../store/slices/kanban/types';
 import KanbanCard from '../card';
 import { ICardDnd } from '../types';
-import './styles.scss';
+import dayjs from 'dayjs';
 import isToday from 'dayjs/plugin/isToday';
+import './styles.scss';
 
 dayjs.extend(isToday);
 

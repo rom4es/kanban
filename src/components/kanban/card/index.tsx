@@ -1,5 +1,5 @@
 import dayjs from 'dayjs';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { ICard, ModalType } from '../../../store/slices/kanban/types';
 import './styles.scss';
 import editIcon from '../../../assets/images/icons/edit.svg';

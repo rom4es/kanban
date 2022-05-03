@@ -6,7 +6,7 @@ import DatePicker from 'react-datepicker';
 import { addCard, editCard } from '../../store/slices/kanban';
 import { ICard, IStatus } from '../../store/slices/kanban/types';
 import TextareaAutosize from 'react-textarea-autosize';
-import { useForm, SubmitHandler } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 
 interface CardFormProps {
   onClose: () => void;
@@ -17,7 +17,11 @@ interface CardFormProps {
 const CardForm: React.FC<CardFormProps> = ({ onClose, initialStatus = null, card = null }) => {
   const { statuses } = useAppSelector((state) => state.kanban);
   const dispatch = useAppDispatch();
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
   const [name, setName] = useState(card ? card.name : '');
   const [description, setDescription] = useState(card ? card.description : '');
@@ -72,7 +76,7 @@ const CardForm: React.FC<CardFormProps> = ({ onClose, initialStatus = null, card
         <div className="b-input">
           <label>Описание</label>
           <TextareaAutosize
-            name="decrfiption"
+            name="description"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             maxRows={10}

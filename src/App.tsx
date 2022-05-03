@@ -1,10 +1,6 @@
-import React, { useState } from 'react';
-import CardForm from './components/cardForm';
+import React from 'react';
 import Kanban from './components/kanban';
 import Modal from './components/modal';
-import { useAppDispatch, useAppSelector } from './hooks';
-import { closeModal } from './store/slices/kanban';
-import { ModalType } from './store/slices/kanban/types';
 
 function App() {
 
