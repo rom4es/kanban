@@ -3,12 +3,12 @@
   flex: 1 1 0px;
   margin: 0 6px;
   background-color: #fff;
-  border-radius: 3px;
-  border: 1px solid;
+  border-radius: 5px;
+  border: 2px solid;
   overflow: hidden;
   &-header {
     padding: 8px;
-    border-top: 5px solid;
+    border-top: 8px solid;
   }
   &-add {
     width: calc(100% - 16px);

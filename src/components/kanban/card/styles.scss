@@ -37,8 +37,16 @@ $card-line-height: 16px;
       word-wrap: break-word;
     }
     &-due {
+      display: flex;
+      align-items: center;
       font-size: $card-font-size;
       line-height: $card-line-height;
+      .overdue-icon{
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        margin-left: 3px;
+      }
     }
   }
   .b-kanban-insert {

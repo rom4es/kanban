@@ -4,6 +4,7 @@ import { ICard, ModalType } from '../../../store/slices/kanban/types';
 import './styles.scss';
 import editIcon from '../../../assets/images/icons/edit.svg';
 import deleteIcon from '../../../assets/images/icons/close.svg';
+import fireIcon from '../../../assets/images/icons/fire.svg';
 import { DropTargetMonitor, useDrag, useDrop, XYCoord } from 'react-dnd';
 import { useAppDispatch } from '../../../hooks';
 import { ICardDnd } from '../types';
@@ -106,6 +107,11 @@ const KanbanCard: React.FC<KanbanCardProps> = ({ card, statusId }) => {
         <div className="b-kanban-card-descr">{card.description}</div>
         <div className="b-kanban-card-due">
           {card.due ? dayjs(card.due).format('DD.MM.YYYY') : ''}
+          {
+            dayjs(card.due).unix() < dayjs().startOf('day').unix() ? (
+              <img src={fireIcon} className="overdue-icon" />
+            ) : ''
+          }
         </div>
       </div>
       {isOver && !isDragging ? (
