@@ -19,11 +19,19 @@
     border-radius: 3px;
     cursor: pointer;
     color: #fff;
+    font-size: 18px;
+    padding: 1px 0 2px;
     margin: 0 8px;
   }
   &-items {
     height: calc(100% - 61px);
     padding: 6px 0;
     overflow: auto;
+  }
+  &:first-child{
+    margin-left: 0;
+  }
+  &:last-child{
+    margin-right: 0;
   }
 }

@@ -13,7 +13,7 @@ const ModalCreation: React.FC<ModalCreationProps> = (props) => {
   return (
     <>
       <h2 className="b-modal-title">
-        {props.card ? 'Редактировать карточку' : 'Создать карточку'}
+        {props.card ? 'Редактировать задачу' : 'Создать задачу'}
       </h2>
       <div className="b-modal-content">
         <CardForm {...props}></CardForm>

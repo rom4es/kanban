@@ -23,7 +23,7 @@ const ModalRemove: React.FC<ModalRemoveProps> = ({ card, onClose }) => {
     <>
       <h2 className="b-modal-title">Удалить запись</h2>
       <div className="b-modal-content">
-        <p>Вы действительно хотите удалить карточку «{card?.name}»?</p>
+        <p>Вы действительно хотите удалить задачу <b>«{card?.name}»</b>?</p>
         <div className="b-modal-remove-controls">
           <button className="b-btn" onClick={onRemoveCard}>
             Да

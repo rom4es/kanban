@@ -17,6 +17,10 @@ $card-line-height: 16px;
       button {
         width: 24px;
         height: 24px;
+        opacity: 0.5;
+        &:hover{
+          opacity: 1;
+        }
         img {
           width: 14px;
           height: 14px;
