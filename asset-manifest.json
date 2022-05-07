@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/kanban/static/css/main.40d5f3e4.css",
+    "main.js": "/kanban/static/js/main.a49f0f1d.js",
+    "static/media/Roboto-Medium.woff": "/kanban/static/media/Roboto-Medium.4b13c1b0cac515581229.woff",
+    "static/media/Roboto-Bold.woff": "/kanban/static/media/Roboto-Bold.02efd5e0fc74e84f75f8.woff",
+    "static/media/Roboto-Regular.woff": "/kanban/static/media/Roboto-Regular.91a8ffbe5942195bc5fc.woff",
+    "static/media/Roboto-Medium.woff2": "/kanban/static/media/Roboto-Medium.e1504d8754c9932bff80.woff2",
+    "static/media/Roboto-Bold.woff2": "/kanban/static/media/Roboto-Bold.5e40d638c7e0bf1f8c4f.woff2",
+    "static/media/Roboto-Regular.woff2": "/kanban/static/media/Roboto-Regular.f33703fab5a4ca59c4d7.woff2",
+    "static/media/edit.svg": "/kanban/static/media/edit.dd88d38d8684e81c1c588f933d64d817.svg",
+    "static/media/github.svg": "/kanban/static/media/github.23ea278799c15865c3725bb9de03a476.svg",
+    "static/media/close.svg": "/kanban/static/media/close.95192aa70bb1cec448b306c96ef3baac.svg",
+    "static/media/fire.svg": "/kanban/static/media/fire.bee218335e6eac009e37c1f62f9e90ff.svg",
+    "index.html": "/kanban/index.html",
+    "main.40d5f3e4.css.map": "/kanban/static/css/main.40d5f3e4.css.map",
+    "main.a49f0f1d.js.map": "/kanban/static/js/main.a49f0f1d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.40d5f3e4.css",
+    "static/js/main.a49f0f1d.js"
+  ]
+}
