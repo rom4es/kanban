@@ -7,6 +7,7 @@ import { addCard, editCard } from '../../store/slices/kanban';
 import { ICard, IStatus } from '../../store/slices/kanban/types';
 import TextareaAutosize from 'react-textarea-autosize';
 import { useForm } from 'react-hook-form';
+import MaskedInput from 'react-text-mask';
 
 interface CardFormProps {
   onClose: () => void;
@@ -87,6 +88,9 @@ const CardForm: React.FC<CardFormProps> = ({ onClose, initialStatus = null, card
         <div className="b-input b-datepicker">
           <label>Срок</label>
           <DatePicker
+            customInput={
+              <MaskedInput mask={[/\d/, /\d/, '.', /\d/, /\d/, '.', /\d/, /\d/, /\d/, /\d/]} />
+            }
             selected={dueDate}
             onChange={(date: Date) => setDueDate(date)}
             dateFormat="dd.MM.yyyy"
